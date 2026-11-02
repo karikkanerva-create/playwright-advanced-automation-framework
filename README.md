@@ -103,14 +103,11 @@ The workflow installs Node.js dependencies and the Playwright browsers, runs the
 - Playwright Test
 - TypeScript
 - End-to-end UI test automation
-- API testing and schema validation
-- Mocking and network interception
+- API testing and JSON Schema Validation (AJV)
+- Mocking and network interception with `page.route()`
 - Page Object Model (POM)
 - Reusable Playwright fixtures
-- Authentication state management
 - Storage State Authentication
-- JSON Schema Validation (AJV)
-- Network Mocking with `page.route()`
 - API Contract Testing
 - Cross-browser testing
 - Test data management with JSON
