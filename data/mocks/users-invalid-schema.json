@@ -1,0 +1,10 @@
+{
+  "page": "invalid",
+  "data": [
+    {
+      "id": "wrong-type",
+      "email": 12345
+    }
+  ],
+  "myTestValue": "Kari"
+}
