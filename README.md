@@ -94,7 +94,9 @@ These tests are implemented using `page.route()` and `route.fulfill()`, which al
 
 ## Continuous Integration
 
-The project is structured for execution in CI environments such as GitHub Actions and similar pipelines. The Playwright configuration supports browser projects, retries, and environment-variable-based setup to run tests in headless mode.
+GitHub Actions runs the Playwright test suite on pushes and pull requests targeting `main` or `master`. The workflow can also be started manually from the **Actions** tab using **Run workflow**.
+
+The workflow installs Node.js dependencies and the Playwright browsers, runs the tests in headless mode, and uploads the HTML report and test results as a downloadable artifact, including when a test fails. The SauceDemo URLs are supplied by the workflow, so no local `config/dev.env` file or GitHub secret is required for these tests.
 
 ## Skills Demonstrated
 
