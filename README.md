@@ -5,6 +5,7 @@ This project demonstrates an advanced Playwright and TypeScript automation frame
 ## Technologies
 
 - Playwright Test
+- Docker
 - TypeScript
 - Node.js
 - JSON test data
@@ -101,6 +102,7 @@ The workflow installs Node.js dependencies and the Playwright browsers, runs the
 ## Skills Demonstrated
 
 - Playwright Test
+- Docker containerization and test execution
 - TypeScript
 - End-to-end UI test automation
 - API testing and JSON Schema Validation (AJV)
@@ -129,6 +131,28 @@ BASE_URL=https://www.saucedemo.com
 INVENTORY_URL=https://www.saucedemo.com/inventory.html
 HEADLESS=true
 ```
+
+## Run Tests with Docker
+
+The Docker image uses Playwright `1.64.1`. Create `config/dev.env` as described
+above before running the container. Build the image from the project root:
+
+```bash
+docker build -t playwright-advanced-automation-framework .
+```
+
+Run the tests and keep the HTML report and test results in the project folders:
+
+```bash
+docker run --rm --env-file config/dev.env \
+  -v "${PWD}/playwright-report:/app/playwright-report" \
+  -v "${PWD}/test-results:/app/test-results" \
+  playwright-advanced-automation-framework
+```
+
+The authentication setup test creates `auth/storageState.json` in the
+container before the browser tests run. The file is excluded from the Docker
+build context, so a pre-existing local storage state is not required.
 
 ## Run All Tests
 
