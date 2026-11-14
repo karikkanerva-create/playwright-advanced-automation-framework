@@ -38,6 +38,7 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
+      testIgnore: /auth\.setup\.spec\.ts/,
       use: {
         ...devices['Desktop Chrome'],
         storageState:
@@ -48,6 +49,7 @@ export default defineConfig({
 
     {
       name: 'firefox',
+      testIgnore: /auth\.setup\.spec\.ts/,
       use: { ...devices['Desktop Firefox'], 
              storageState:
         'auth/storageState.json'
@@ -57,6 +59,7 @@ export default defineConfig({
 
     {
       name: 'webkit',
+      testIgnore: /auth\.setup\.spec\.ts/,
       use: { ...devices['Desktop Safari'], 
              storageState:
         'auth/storageState.json'
@@ -86,6 +89,7 @@ export default defineConfig({
           Authorization:
             `Bearer ${process.env.API_TOKEN}`
         }
+        
       }
     }
 
