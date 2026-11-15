@@ -38,7 +38,7 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      testIgnore: /auth\.setup\.spec\.ts/,
+      testIgnore: [/auth\.setup\.spec\.ts/, '**/api/**'],
       use: {
         ...devices['Desktop Chrome'],
         storageState:
@@ -49,7 +49,7 @@ export default defineConfig({
 
     {
       name: 'firefox',
-      testIgnore: [/auth\.setup\.spec\.ts/, '**/mocking/**'],
+      testIgnore: [/auth\.setup\.spec\.ts/, '**/mocking/**', '**/api/**'],
 
       use: { ...devices['Desktop Firefox'], 
              storageState:
@@ -60,7 +60,7 @@ export default defineConfig({
 
     {
       name: 'webkit',
-      testIgnore: [/auth\.setup\.spec\.ts/, '**/mocking/**'],
+      testIgnore: [/auth\.setup\.spec\.ts/, '**/mocking/**', '**/api/**'],
       use: { ...devices['Desktop Safari'], 
              storageState:
         'auth/storageState.json'
