@@ -49,7 +49,8 @@ export default defineConfig({
 
     {
       name: 'firefox',
-      testIgnore: /auth\.setup\.spec\.ts/,
+      testIgnore: [/auth\.setup\.spec\.ts/, '**/mocking/**'],
+
       use: { ...devices['Desktop Firefox'], 
              storageState:
         'auth/storageState.json'
@@ -59,7 +60,7 @@ export default defineConfig({
 
     {
       name: 'webkit',
-      testIgnore: /auth\.setup\.spec\.ts/,
+      testIgnore: [/auth\.setup\.spec\.ts/, '**/mocking/**'],
       use: { ...devices['Desktop Safari'], 
              storageState:
         'auth/storageState.json'
