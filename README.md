@@ -111,6 +111,7 @@ The workflow installs Node.js dependencies and the Playwright browsers, runs the
 - Reusable Playwright fixtures
 - Storage State Authentication
 - API Contract Testing
+- Github CI Actions
 - Cross-browser testing
 - Test data management with JSON
 - Troubleshooting API and UI failures in automated tests
