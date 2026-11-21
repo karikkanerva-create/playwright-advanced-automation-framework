@@ -1,0 +1,35 @@
+{
+  "page": 1,
+  "data": [
+    {
+      "id": 1,
+      "email": "user1@example.com",
+      "first_name": "User1",
+      "last_name": "Tester"
+    },
+    {
+      "id": 2,
+      "email": "user2@example.com",
+      "first_name": "User2",
+      "last_name": "Tester"
+    },
+    {
+      "id": 3,
+      "email": "user3@example.com",
+      "first_name": "User3",
+      "last_name": "Tester"
+    },
+    {
+      "id": 4,
+      "email": "user4@example.com",
+      "first_name": "User4",
+      "last_name": "Tester"
+    },
+    {
+      "id": 5,
+      "email": "user5@example.com",
+      "first_name": "User5",
+      "last_name": "Tester"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Playwright Advanced Automation Framework
 
-This project demonstrates an advanced Playwright and TypeScript automation framework for testing a web application, managing authentication state, and validating API responses. The suite combines end-to-end UI testing, reusable fixtures, page object model patterns, and mock-based API testing to build a realistic and maintainable test environment.
+This project demonstrates an advanced Playwright and TypeScript automation framework for testing a web application, managing authentication state, and validating API responses. The suite combines end-to-end UI testing, reusable fixtures, page object model patterns, mock-based API testing, and data-driven testing. Python utilities generate JSON test datasets and mock API responses that Playwright tests can reuse.
 
 ## Technologies
 
@@ -14,6 +14,7 @@ This project demonstrates an advanced Playwright and TypeScript automation frame
 - Ajv schema validation
 - Cross-browser testing
 - API mocking and network interception
+- Python utilities
 
 ## Project Structure
 
@@ -33,6 +34,7 @@ playwright-advanced-automation-framework/
 │   ├── users.json
 │   └── mocks/
 │       ├── empty-users.json
+│       ├── generated-users.json
 │       ├── users-delay.json
 │       ├── users-invalid-schema.json
 │       └── users-server-error.json
@@ -53,8 +55,11 @@ playwright-advanced-automation-framework/
 │   └── mocking/
 │       ├── delayed-response.spec.ts
 │       ├── empty-users.spec.ts
+│       ├── generated-users.spec.ts
 │       ├── invalid-schema.spec.ts
 │       └── server-error.spec.ts
+├── tools/
+│   └── generate_mock_users.py
 ├── utils/
 │   └── dataFactory.ts
 ├── package.json
@@ -84,6 +89,8 @@ This project includes dedicated mocking scenarios to demonstrate how Playwright 
 
 - Empty users response
   - Verifies that the application handles valid empty datasets correctly.
+- Generated users response
+  - Demonstrates Python-generated mock data used with Playwright network interception.
 - Delayed response
   - Simulates network latency and validates timing-sensitive behavior.
 - Invalid schema response
@@ -92,6 +99,22 @@ This project includes dedicated mocking scenarios to demonstrate how Playwright 
   - Tests handling of HTTP 500 responses and error payloads.
 
 These tests are implemented using `page.route()` and `route.fulfill()`, which allows the mock payloads to be returned exactly as needed for the scenario.
+
+## Python Utilities
+
+- Automated test data generation
+- JSON dataset creation
+- Mock API response generation
+
+The Python utility at `tools/generate_mock_users.py` creates a generated users
+JSON dataset at `data/mocks/generated-users.json`. The dataset can be used
+directly with Playwright mocking.
+
+Run the generator from the project root:
+
+```bash
+python tools/generate_mock_users.py
+```
 
 ## Continuous Integration
 
