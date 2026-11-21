@@ -76,7 +76,7 @@ playwright-advanced-automation-framework/
 - Add a product to the shopping cart and verify that it is displayed correctly
 - Remove the product and verify that the cart is empty
 - Validate an API response against a JSON schema with Ajv
-- Mock empty, delayed, invalid, and server-error responses to test resilience
+- Mock empty, delayed, invalid, server-error, and Python-generated user responses to test resilience and data-driven behavior
 - Verify UI elements and application state using Playwright assertions
 
 The test suite runs across Chromium, Firefox, and WebKit.
@@ -110,6 +110,8 @@ The Python utility at `tools/generate_mock_users.py` creates a generated users
 JSON dataset at `data/mocks/generated-users.json`. The dataset can be used
 directly with Playwright mocking.
 
+Python-generated test data is automatically created if the dataset does not exist before test execution.
+
 Run the generator from the project root:
 
 ```bash
@@ -138,6 +140,7 @@ The workflow installs Node.js dependencies and the Playwright browsers, runs the
 - Cross-browser testing
 - Test data management with JSON
 - Troubleshooting API and UI failures in automated tests
+- Automated Test Data Generation using Python
 
 ## Installation
 
